@@ -40,7 +40,7 @@ var budgetcontroller = (function () {
         testing: function () {
             console.log(data);
         }
-    }
+    };
 
 })();
 // TODO : UI CONTROLLER MODULE
@@ -55,9 +55,9 @@ var UIcontroller = (function () {
     return {
         getinput: function () {
             return {
-                id: document.querySelector(DomString.inputType).value,
+                type: document.querySelector(DomString.inputType).value,
                 description: document.querySelector(DomString.inputDes).value,
-                valuee: document.querySelector(DomString.inputValue).value
+                value: document.querySelector(DomString.inputValue).value
             };
         },
         getDomString: function () {
@@ -81,7 +81,6 @@ var controller = (function (budgetctrl, uictrl) {
         // 2.add the to the budget controller 
         var result = uictrl.getinput();
         var newItem = budgetctrl.addItem(result.type, result.description, result.value)
-
         // 3. add the item to the UI
 
         // 3.calculate the budget
@@ -93,7 +92,6 @@ var controller = (function (budgetctrl, uictrl) {
             console.log('the application is started');
             callEventListner();
         }
-    }
-
+    };
 })(budgetcontroller, UIcontroller);
 controller.init();
